@@ -18,6 +18,7 @@ const Dashboard = (props) => {
             <h4>Welcome, {props.user.username}</h4>
             <div className="flex-container">
                 <Chart />
+                {this.state = props}
                 <Total />
                 <AddCar carTotal={props.cars.length} />
             </div>
@@ -45,7 +46,7 @@ const Dashboard = (props) => {
                         <TableCell>
                             <DeleteIcon
        oherenClick={() => props.removeCar(idx)}
-       
+
                 className="icon text-red" />
                         </TableCell>
                     </TableRow>
