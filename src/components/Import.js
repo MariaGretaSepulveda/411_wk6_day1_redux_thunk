@@ -3,7 +3,7 @@ import { Button, Container, Table, TableHead, TableBody, TableRow, TableCell, Ta
 import { MoreVert } from '@material-ui/icons';
 
 const Import = (props) => {
-    // fill out this component
+    
     <div>
         <button onClick={props.fetchMakes} variant="contained" color="primary">Import</button>
         <Menu></Menu>
