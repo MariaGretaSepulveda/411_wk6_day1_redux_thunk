@@ -1,28 +1,42 @@
 import React from 'react'
-import { Button, Container, Table, TableHead, TableBody, TableRow, TableCell, Tab } from '@material-ui/core';
-import { MoreVert } from '@material-ui/icons';
+import { MoreVert } from '@material-ui/icons'
+import { Button, Table, TableHead, TableBody, TableRow, TableCell, Container } from '@material-ui/core'
+import Menu from './Menu'
 
 const Import = (props) => {
-    
-    <div>
-        <button onClick={props.fetchMakes} variant="contained" color="primary">Import</button>
-        <Menu></Menu>
+  // fill out this component
+  
+  return (
+    // <p>Import Component</p>
+    <Container>
+      <Button 
+      variant='contained' 
+      color='primary' 
+      onClick={props.fetchMakes}
+      >Import</Button>
         <Table>
-            {props.makes.map(x => {
-                return (
-                    <TableRow>
-                        <TableCell>{x.makes.MakeId}</TableCell>
-                        <TableCell>{x.makes.MakeName}</TableCell>
-                        <TableCell></TableCell>
-                        <MoreVert></MoreVert>
-                    </TableRow>
-                )
-            })}
+          <TableHead>
+            <TableRow>
+              <TableCell>Id</TableCell>
+              <TableCell>Make</TableCell>
+              <TableCell>Actions</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+          {props.makes.map((make, index) => (
+            <TableRow key={make.id}>
+              <TableCell component='th'scope='row'>
+                {make.MakeId}
+              </TableCell>
+              <TableCell>{make['MakeName']}</TableCell>
+              <TableCell>
+                <Menu></Menu></TableCell>
+            </TableRow>
+          ))}
+          </TableBody>
         </Table>
-    </div>
-    return (
-        <p>Import Component</p>
-    )
+    </Container>
+  )
 }
 
-export default Import;
+export default Import
